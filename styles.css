@@ -94,28 +94,83 @@ p {
     transform: scale(1.05); /* Efek hover tombol */
 }
 
-@media (max-width: 768px) {
-    .profile-img {
-        width: 120px; /* Ukuran foto profil lebih kecil di tablet */
-        height: 120px;
-    }
-    h1 {
-        font-size: 1.8em; /* Mengurangi ukuran teks judul di tablet */
-    }
+
+
+
+        /* Responsive for mobile devices (Android) */
+@media (max-width: 480px) {
     .card {
+        width: 90%; /* Lebar card mengikuti layar */
         padding: 20px;
+        box-sizing: border-box; /* Memastikan padding dihitung dalam lebar card */
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px; /* Memberikan ruang di bawah gambar */
+    }
+
+    .card h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px; /* Menambahkan jarak antara judul dan teks */
+    }
+
+    .card p {
+        font-size: 1rem;
+        margin-bottom: 20px; /* Memberikan jarak lebih pada paragraf */
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px 0; /* Menyesuaikan padding agar tombol lebih tinggi */
+        font-size: 16px;
+        margin-bottom: 10px; /* Memberikan jarak antara tombol */
+        text-align: center; /* Memastikan teks di tombol rata tengah */
+    }
+
+    body {
+        background-size: 200% 200%;
+        animation: backgroundAnimation 6s ease-in-out infinite;
     }
 }
 
-@media (max-width: 480px) {
+/* Responsive for tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .card {
+        width: 80%;
+        padding: 20px;
+    }
+
     .profile-img {
-        width: 100px; /* Ukuran foto profil lebih kecil di ponsel */
-        height: 100px;
+        width: 130px;
+        height: 130px;
     }
-    h1 {
-        font-size: 1.5em; /* Ukuran judul lebih kecil lagi di ponsel */
+
+    .card h1 {
+        font-size: 1.8rem;
     }
-    .btn-social {
-        font-size: 0.9em; /* Mengurangi ukuran tombol di ponsel */
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+/* Responsive for desktop */
+@media (min-width: 769px) {
+    .card {
+        width: 350px;
+    }
+
+    .card h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        width: auto;
+        margin-bottom: 10px;
+        text-align: center;
     }
 }
