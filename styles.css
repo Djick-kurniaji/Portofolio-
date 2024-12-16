@@ -1,103 +1,127 @@
 /* Background Animation */
 @keyframes backgroundAnimation {
     0% {
-        background-color: #a8c0ff;
+        background: linear-gradient(45deg, #ff7e5f, #feb47b);
+        background-size: 200% 200%;
+    }
+    25% {
+        background: linear-gradient(45deg, #ff6a8f, #6affd7);
+        background-size: 200% 200%;
     }
     50% {
-        background-color: #6a7fff;
+        background: linear-gradient(45deg, #6a7fff, #ff6a8f);
+        background-size: 200% 200%;
+    }
+    75% {
+        background: linear-gradient(45deg, #feb47b, #ff7e5f);
+        background-size: 200% 200%;
     }
     100% {
-        background-color: #a8c0ff;
+        background: linear-gradient(45deg, #ff7e5f, #feb47b);
+        background-size: 200% 200%;
     }
 }
 
+/* Global body background and gradient animation */
 body {
-    background: linear-gradient(135deg, #a8c0ff 0%, #6a7fff 100%);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    animation: backgroundAnimation 15s ease-in-out infinite;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Starting gradient */
+    background-size: 200% 200%; /* Makes the gradient move */
+    animation: backgroundAnimation 6s ease-in-out infinite; /* Speed and smoothness of the animation */
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
+/* Card Styles */
 .card {
+    background-color: #f8f9fa;
     border-radius: 15px;
-    background-color: white;
-    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 10px 30px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    animation: rgbBorder 6s linear infinite; /* Extend duration for smoother color transition */
+    border: 5px solid transparent; /* Perbesar border menjadi 5px */
+    background-clip: padding-box;
 }
 
+/* RGB border animation */
+@keyframes rgbBorder {
+    0% {
+        border-color: rgba(255, 0, 0, 1); /* Red */
+    }
+    20% {
+        border-color: rgba(255, 165, 0, 1); /* Orange */
+    }
+    40% {
+        border-color: rgba(0, 255, 0, 1); /* Green */
+    }
+    60% {
+        border-color: rgba(0, 0, 255, 1); /* Blue */
+    }
+    80% {
+        border-color: rgba(75, 0, 130, 1); /* Indigo */
+    }
+    100% {
+        border-color: rgba(255, 0, 0, 1); /* Red */
+    }
+}
+
+/* Hover effect for card */
 .card:hover {
-    transform: translateY(-10px); /* Efek hover untuk card */
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
 }
 
-.profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.profile-img {
-    width: 150px; /* Ukuran gambar profil default */
-    height: 150px; /* Ukuran gambar profil default */
-    object-fit: cover;
-    border: 5px solid #fff; /* Border putih untuk gambar profil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.1); /* Efek hover untuk memperbesar gambar */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan pada hover */
-}
-
-h1 {
-    font-size: 2.2em;
-    color: #333;
+/* Card content styles */
+.card h1 {
     font-family: 'Arial', sans-serif;
-    margin-bottom: 10px;
-}
-
-p {
-    color: #555;
-    font-size: 1em;
+    font-weight: bold;
+    color: #343a40;
     margin-bottom: 20px;
 }
 
-.btn-social {
-    background-color: #4e73df; /* Warna tombol default */
-    color: white;
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin: 5px;
-    width: 100%;
-    transition: background-color 0.3s, transform 0.3s ease;
+.card p {
+    font-family: 'Arial', sans-serif;
+    color: #6c757d;
+    margin-bottom: 30px;
 }
 
-.btn-social:hover {
-    background-color: #2e59d9; /* Warna tombol saat hover */
-    transform: scale(1.05); /* Efek hover tombol */
+.card .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
+.card .profile-img:hover {
+    transform: scale(1.1); /* Enlarge profile image */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
+}
 
+/* Button Styles */
+.card .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
 
+.card .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
 
-        /* Responsive for mobile devices (Android) */
+/* Responsive for mobile devices (Android) */
 @media (max-width: 480px) {
     .card {
         width: 90%; /* Lebar card mengikuti layar */
