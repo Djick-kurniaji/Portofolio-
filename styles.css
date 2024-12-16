@@ -1,0 +1,121 @@
+/* Background Animation */
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #a8c0ff;
+    }
+    50% {
+        background-color: #6a7fff;
+    }
+    100% {
+        background-color: #a8c0ff;
+    }
+}
+
+body {
+    background: linear-gradient(135deg, #a8c0ff 0%, #6a7fff 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: backgroundAnimation 15s ease-in-out infinite;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efek hover untuk card */
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 150px; /* Ukuran gambar profil default */
+    height: 150px; /* Ukuran gambar profil default */
+    object-fit: cover;
+    border: 5px solid #fff; /* Border putih untuk gambar profil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1); /* Efek hover untuk memperbesar gambar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan pada hover */
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    background-color: #4e73df; /* Warna tombol default */
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 5px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.btn-social:hover {
+    background-color: #2e59d9; /* Warna tombol saat hover */
+    transform: scale(1.05); /* Efek hover tombol */
+}
+
+@media (max-width: 768px) {
+    .profile-img {
+        width: 120px; /* Ukuran foto profil lebih kecil di tablet */
+        height: 120px;
+    }
+    h1 {
+        font-size: 1.8em; /* Mengurangi ukuran teks judul di tablet */
+    }
+    .card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-img {
+        width: 100px; /* Ukuran foto profil lebih kecil di ponsel */
+        height: 100px;
+    }
+    h1 {
+        font-size: 1.5em; /* Ukuran judul lebih kecil lagi di ponsel */
+    }
+    .btn-social {
+        font-size: 0.9em; /* Mengurangi ukuran tombol di ponsel */
+    }
+}
